@@ -7,14 +7,14 @@ function to_array(proc) {
   var array = [];
   while (!to_boolean(IS_EMPTY(proc))) {
     var item = FIRST(proc);
-    if (typeof item == 'function') {
-        item = to_integer(item);
-    }
     array.push(item);
     proc = REST(proc);
   }
 
   return array;
+}
+function to_integers(list) {
+    return to_array(list).map(function(numeral) { return to_integer(numeral); });
 }
 function to_boolean(proc) {
   return IF(proc)(true)(false)
@@ -52,6 +52,7 @@ function to_string(s) {
 module.exports = {
     church_numeral: church_numeral,
     to_integer: to_integer,
+    to_integers: to_integers,
     to_boolean: to_boolean,
     to_array: to_array,
     to_list: to_list,

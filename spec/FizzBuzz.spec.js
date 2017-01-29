@@ -1,9 +1,27 @@
-require('../FizzBuzz');
+var FizzBuzz = require('../FizzBuzz');
 
 var helpers = require('../helpers.js');
 
 
 describe('FizzBuzz', function() {
+    describe('FizzBuzz array', function() {
+        it('should return array with correct FizzBuzz values', function() {
+            var result = [ '1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8',
+                'Fizz', 'Buzz', '11', 'Fizz', '13', '14', 'FizzBuzz', '16',
+                '17', 'Fizz', '19', 'Buzz', 'Fizz', '22', '23', 'Fizz', 'Buzz',
+                '26', 'Fizz', '28', '29', 'FizzBuzz', '31', '32', 'Fizz', '34',
+                'Buzz', 'Fizz', '37', '38', 'Fizz', 'Buzz', '41', 'Fizz', '43',
+                '44', 'FizzBuzz', '46', '47', 'Fizz', '49', 'Buzz', 'Fizz',
+                '52', '53', 'Fizz', 'Buzz', '56', 'Fizz', '58', '59',
+                'FizzBuzz', '61', '62', 'Fizz', '64', 'Buzz', 'Fizz', '67',
+                '68', 'Fizz', 'Buzz', '71', 'Fizz', '73', '74', 'FizzBuzz',
+                '76', '77', 'Fizz', '79', 'Buzz', 'Fizz', '82', '83', 'Fizz',
+                'Buzz', '86', 'Fizz', '88', '89', 'FizzBuzz', '91', '92',
+                'Fizz', '94', 'Buzz', 'Fizz', '97', '98', 'Fizz', 'Buzz'];
+            expect(helpers.to_array(FizzBuzz).map(helpers.to_string)).toEqual(result);
+
+        });
+    });
     describe('test numeral function', function() {
         it('should create proper church numeral', function() {
             for (var i=0; i<200; i++) {
@@ -166,7 +184,7 @@ describe('FizzBuzz', function() {
                         UNSHIFT(EMPTY)(THREE)
                     )(TWO)
                 )(ONE);
-                expect(helpers.to_array(list)).toEqual([1,2,3]);
+                expect(helpers.to_integers(list)).toEqual([1,2,3]);
             });
         });
         describe('RANGE', function() {
@@ -182,7 +200,7 @@ describe('FizzBuzz', function() {
                 pairs.forEach(function(pair) {
                     var a = helpers.church_numeral(pair[0]);
                     var b = helpers.church_numeral(pair[1]);
-                    expect(helpers.to_array(RANGE(a)(b))).toEqual(range(pair[0], pair[1]));
+                    expect(helpers.to_integers(RANGE(a)(b))).toEqual(range(pair[0], pair[1]));
                 });
             });
         });
@@ -199,7 +217,7 @@ describe('FizzBuzz', function() {
             var list = RANGE(ONE)(FIVE);
             var result = [2,3,4,5,6];
             it('should increment all elements of the list', function() {
-                expect(helpers.to_array(MAP(list)(INCREMENT))).toEqual(result);
+                expect(helpers.to_integers(MAP(list)(INCREMENT))).toEqual(result);
             });
         });
     });
