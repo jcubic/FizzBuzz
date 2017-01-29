@@ -1,4 +1,4 @@
-
+require('./FizzBuzz');
 
 function to_integer(proc) {
     return proc(n => n+1)(0);

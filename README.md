@@ -1,5 +1,5 @@
 # FizzBuzz
-JavaScript version of lambda only FizzBuzz
+JavaScript version of lambda only FizzBuzz inspired by article [Programming with nothing](http://codon.com/programming-with-nothing)
 
 to run tests use
 
