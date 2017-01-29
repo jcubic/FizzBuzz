@@ -203,4 +203,27 @@ describe('FizzBuzz', function() {
             });
         });
     });
+    describe('strings', function() {
+        function test_array(fn, array) {
+            array.forEach(function(pair) {
+                expect(fn(pair[0])).toEqual(pair[1]);
+            });
+        }
+        describe('constants', function() {
+            it('should return proper characters', function() {
+                test_array(helpers.to_char, [[B, 'B'], [F, 'F'], [I, 'i'], [U, 'u'], [ZED, 'z']]);
+            });
+            it('shuld return proper strings', function() {
+                test_array(helpers.to_string, [[FIZZ, 'Fizz'], [BUZZ, 'Buzz'], [FIZZBUZZ, 'FizzBuzz']]);
+            });
+        });
+        describe('TO_DIGITS', function() {
+            var array = [100, 200, 450, 1, 0].map(function(number) {
+                return [helpers.church_numeral(number), number.toString()];
+            });
+            test_array(function(numeral) {
+                return helpers.to_string(TO_DIGITS(numeral));
+            }, array);
+        });
+    });
 });

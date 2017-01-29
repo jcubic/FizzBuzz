@@ -39,11 +39,22 @@ function to_list(array) {
         return PAIR(FALSE)(PAIR(array[0])(to_list(array.slice(1))));
     }
 }
+function to_char(c) {
+    if (typeof c == 'function') { // to_array convert numerals to integers
+        c = to_integer(c);
+    }
+    return '0123456789BFiuz'.slice(c)[0];
+}
+function to_string(s) {
+    return to_array(s).map(to_char).join('');
+}
 
 module.exports = {
     church_numeral: church_numeral,
     to_integer: to_integer,
     to_boolean: to_boolean,
     to_array: to_array,
-    to_list: to_list
+    to_list: to_list,
+    to_char: to_char,
+    to_string: to_string
 }
