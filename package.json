@@ -1,0 +1,27 @@
+{
+  "name": "fizz-buzz",
+  "version": "1.0.0",
+  "description": "Function only FizzBuzz in javascript based on Programming With Nothing",
+  "main": "FizzBuzz.js",
+  "scripts": {
+    "test": "node_modules/jasmine-node/bin/jasmine-node --captureExceptions --verbose --color --forceexit spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcubic/FizzBuzz.git"
+  },
+  "keywords": [
+    "functions",
+    "fizzbuzz"
+  ],
+  "author": "Jakub Jankiewicz <jcubic@onet.pl> (http://jakub.jankiewi.cz)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jcubic/FizzBuzz/issues"
+  },
+  "homepage": "https://github.com/jcubic/FizzBuzz#readme",
+  "dependencies": {
+    "jasmine": "^2.5.3",
+    "jasmine-node": "^1.14.5"
+  }
+}
