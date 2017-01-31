@@ -1,3 +1,4 @@
+divert(-1)
 define(`ZERO', `p => x => x')
 define(`ONE', `p => x => p(x)')
 define(`TWO', `p => x => p(p(x))')
@@ -40,7 +41,8 @@ define(`ZED', `INCREMENT(U)')
 define(`FIZZ', `UNSHIFT(UNSHIFT(UNSHIFT(UNSHIFT(EMPTY)(ZED))(ZED))(I))(F)')
 define(`BUZZ', `UNSHIFT(UNSHIFT(UNSHIFT(UNSHIFT(EMPTY)(ZED))(ZED))(U))(B)')
 define(`FIZZBUZZ', `UNSHIFT(UNSHIFT(UNSHIFT(UNSHIFT(BUZZ)(ZED))(ZED))(I))(F)')
-define(`TO_DIGITS', `Z(f => n => PUSH(IF(IS_LESS_OR_EQUAL(n)(DECREMENT(TEN)))(EMPTY)( x => f(DIV(n)(TEN))(x)))((MOD(n)(TEN))))')
+define(`TO_DIGITS', `Z(f => n => PUSH(IF(IS_LESS_OR_EQUAL(n)(DECREMENT(TEN)))(EMPTY)(x => f(DIV(n)(TEN))(x)))((MOD(n)(TEN))))')
+divert(0)
 module.exports = MAP(RANGE(ONE)(HUNDRED))( n => IF(IS_ZERO(MOD(n)(FIFTEEN)))(
     FIZZBUZZ
 )(IF(IS_ZERO(MOD(n)(THREE)))(
