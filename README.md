@@ -8,4 +8,7 @@ npm install
 npm test
 ```
 
-it will install jasmine and run the tests using node
+it will install jasmine and run the tests using node.
+
+macros.m4 is attempt to create single expression of the js code,
+without need to do this by hand.
